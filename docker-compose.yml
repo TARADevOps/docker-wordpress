@@ -5,7 +5,7 @@ networks:
 
 services:
   mysql_service:
-    container_name: mysql_container
+    container_name: db
     build:
       context: ./mysql
     restart: always
@@ -23,7 +23,7 @@ services:
       MYSQL_ROOT_PASSWORD: wordpress
 
   wordpress_service:
-    container_name: wordpress_container
+    container_name: wp
     build:
       context: ./wordpress
     restart: always
@@ -40,7 +40,7 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
 
   nginx_service:
-    container_name: nginx_container
+    container_name: nginx
     build:
       context: ./nginx
     restart: always
