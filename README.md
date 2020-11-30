@@ -35,4 +35,5 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 ## Resources
 ```
 https://sidshome.wordpress.com/2020/06/05/how-to-change-the-maximum-file-size-you-can-upload-to-wordpress-on-nginx-w-php-fpm/
+https://www.hostinger.com/tutorials/how-to-install-wordpress-with-nginx-on-ubuntu/
 ```
