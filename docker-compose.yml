@@ -4,7 +4,7 @@ networks:
   wp-network:
 
 services:
-  mysql_service:
+  service_db:
     container_name: db
     build:
       context: ./mysql
@@ -22,7 +22,7 @@ services:
       MYSQL_PASSWORD: wordpress
       MYSQL_ROOT_PASSWORD: wordpress
 
-  wordpress_service:
+  service_wp:
     container_name: wp
     build:
       context: ./wordpress
@@ -30,25 +30,25 @@ services:
     volumes:
       - ./site:/var/www/html
     depends_on:
-      - mysql_service
+      - service_db
     networks:
       - wp-network
     environment:
-      WORDPRESS_DB_HOST: mysql_service
+      WORDPRESS_DB_HOST: service_db
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
 
-  nginx_service:
+  service_http:
     container_name: nginx
     build:
       context: ./nginx
     restart: always
     ports:
-      - 80:80
+      - 8080:80
     depends_on:
-      - wordpress_service
-      - mysql_service
+      - service_wp
+      - service_db
     networks:
       - wp-network
     volumes:
