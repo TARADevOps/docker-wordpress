@@ -1,4 +1,4 @@
-# docker-wordpress
+# Docker WordPress
 Wordpress, PHP-FPM 7.4, MySQL 8, Nginx Setup
 
 # About the repo
@@ -30,4 +30,9 @@ Copy and paste these commands into your Wordpress Dockerfile to be able to use t
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x wp-cli.phar \
     && mv wp-cli.phar /usr/local/bin/wp
+```
+
+## Resources
+```
+https://sidshome.wordpress.com/2020/06/05/how-to-change-the-maximum-file-size-you-can-upload-to-wordpress-on-nginx-w-php-fpm/
 ```
